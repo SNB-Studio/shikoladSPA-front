@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шиколад SPA</title>
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="./src/css/swiper-bundle.min.css">
+</head>
+<body class="body">
+    <header class="header">
+        <div class="container header-inner">
+            <a href="#" id="tel-button">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M5.91891 8.0312C6.73071 8.85473 7.71296 9.49054 8.79669 9.89398L10.2628 8.72731C10.3063 8.69738 10.3578 8.68135 10.4106 8.68135C10.4634 8.68135 10.5149 8.69738 10.5584 8.72731L13.2806 10.4812C13.3839 10.5433 13.4714 10.6287 13.5361 10.7304C13.6008 10.8322 13.641 10.9476 13.6534 11.0675C13.6659 11.1874 13.6503 11.3086 13.6078 11.4215C13.5654 11.5344 13.4973 11.6358 13.4089 11.7179L12.1334 12.9779C11.9507 13.1584 11.7262 13.2908 11.4798 13.3634C11.2335 13.436 10.9731 13.4465 10.7217 13.394C8.21421 12.8761 5.90302 11.6632 4.05224 9.89398C2.24254 8.10713 0.990236 5.83353 0.44724 3.34898C0.3936 3.10151 0.404795 2.84437 0.479742 2.6025C0.554689 2.36062 0.690846 2.14221 0.875018 1.96843L2.19724 0.692871C2.27906 0.608788 2.37885 0.544305 2.48912 0.504251C2.59939 0.464196 2.7173 0.449608 2.83401 0.461579C2.95072 0.473549 3.06321 0.511768 3.16306 0.573373C3.26291 0.634978 3.34752 0.718374 3.41057 0.817315L5.2228 3.50454C5.25405 3.54673 5.27093 3.59786 5.27093 3.65037C5.27093 3.70288 5.25405 3.75401 5.2228 3.7962L4.02891 5.2312C4.4433 6.29324 5.08891 7.2497 5.91891 8.0312Z" fill="#ECDACC"/>
+                </svg>                    
+            </a>
+            <div class="header-logo">
+                <img src="./src/media/logo.svg" alt="Шиколад. SPA CENTER">
+            </div>
+            <div class="menu">
+                <div class="menu-inner">
+                    <a href="#" id="tel-overlay">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                            <path d="M5.91891 8.0312C6.73071 8.85473 7.71296 9.49054 8.79669 9.89398L10.2628 8.72731C10.3063 8.69738 10.3578 8.68135 10.4106 8.68135C10.4634 8.68135 10.5149 8.69738 10.5584 8.72731L13.2806 10.4812C13.3839 10.5433 13.4714 10.6287 13.5361 10.7304C13.6008 10.8322 13.641 10.9476 13.6534 11.0675C13.6659 11.1874 13.6503 11.3086 13.6078 11.4215C13.5654 11.5344 13.4973 11.6358 13.4089 11.7179L12.1334 12.9779C11.9507 13.1584 11.7262 13.2908 11.4798 13.3634C11.2335 13.436 10.9731 13.4465 10.7217 13.394C8.21421 12.8761 5.90302 11.6632 4.05224 9.89398C2.24254 8.10713 0.990236 5.83353 0.44724 3.34898C0.3936 3.10151 0.404795 2.84437 0.479742 2.6025C0.554689 2.36062 0.690846 2.14221 0.875018 1.96843L2.19724 0.692871C2.27906 0.608788 2.37885 0.544305 2.48912 0.504251C2.59939 0.464196 2.7173 0.449608 2.83401 0.461579C2.95072 0.473549 3.06321 0.511768 3.16306 0.573373C3.26291 0.634978 3.34752 0.718374 3.41057 0.817315L5.2228 3.50454C5.25405 3.54673 5.27093 3.59786 5.27093 3.65037C5.27093 3.70288 5.25405 3.75401 5.2228 3.7962L4.02891 5.2312C4.4433 6.29324 5.08891 7.2497 5.91891 8.0312Z" fill="#fff"/>
+                        </svg>                    
+                    </a>
+                    <nav class="navigation">
+                        <a href="#">О нас</a>
+                        <a href="#">Интерьер</a>
+                        <a href="#">Прайс-лист</a>
+                        <a href="#">Мастера</a>
+                        <a href="#">Контакты</a>
+                    </nav>
+                    <div class="overlay-contact">
+                        <a href="#">8 (495) 797-77-39</a>
+                        <p>г. Мытищи, Колпакова 24а</p>
+                        <p>09:00-22:00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="header-info">
+                <a href="#" class="tel">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                        <path d="M5.91804 8.02681C6.72984 8.85034 7.71209 9.48615 8.79582 9.88959L10.2619 8.72292C10.3054 8.69299 10.3569 8.67696 10.4097 8.67696C10.4625 8.67696 10.514 8.69299 10.5575 8.72292L13.2797 10.4768C13.3831 10.5389 13.4705 10.6243 13.5352 10.726C13.6 10.8278 13.6401 10.9432 13.6526 11.0631C13.665 11.1831 13.6494 11.3042 13.607 11.4171C13.5645 11.53 13.4964 11.6314 13.408 11.7135L12.1325 12.9735C11.9498 13.154 11.7253 13.2864 11.479 13.359C11.2326 13.4316 10.9722 13.4421 10.7208 13.3896C8.21334 12.8717 5.90215 11.6588 4.05137 9.88959C2.24167 8.10274 0.989366 5.82914 0.446371 3.34459C0.39273 3.09711 0.403925 2.83998 0.478873 2.5981C0.55382 2.35623 0.689977 2.13782 0.874149 1.96403L2.19637 0.688476C2.27819 0.604393 2.37798 0.539911 2.48825 0.499856C2.59852 0.459802 2.71643 0.445214 2.83314 0.457184C2.94985 0.469154 3.06234 0.507373 3.16219 0.568978C3.26204 0.630584 3.34665 0.713979 3.4097 0.81292L5.22193 3.50014C5.25318 3.54234 5.27006 3.59346 5.27006 3.64598C5.27006 3.69849 5.25318 3.74961 5.22193 3.79181L4.02804 5.22681C4.44243 6.28884 5.08804 7.24531 5.91804 8.02681Z" fill="#CB997E"/>
+                    </svg>                        
+                    8 (495) 797-77-39
+                </a>
+                <p>г. Мытищи, Колпакова 24а</p>
+                <p>09:00-22:00</p>
+            </div>
+            <button id="nav-toggle"><span></span></button>
+        </div>
+    </header>
+    <article class="content">
+        <section class="index-top">
+            <div class="container top-inner">
+                <div class="item grid-item1">
+                    <h1>
+                        <span class="row">
+                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                            <path d="M7.38376 35.9184L24.1017 32.449L9.74274 41.7347C6.46068 43.8776 6.05043 48.3673 8.71709 51.1224C11.4863 53.8775 15.9991 53.3673 18.153 50.2041L27.4863 36.0204L23.9991 52.6531C23.1786 56.4286 26.153 60 29.9479 60C33.8453 60 36.7171 56.4286 35.8966 52.6531L32.4094 36.0204L41.7427 50.2041C43.8966 53.4694 48.4094 53.8776 51.1786 51.2245C53.9479 48.4694 53.435 43.9796 50.153 41.8367L35.8966 32.551L52.6145 36.0204C56.4094 36.8367 59.9991 33.8776 59.9991 30.102C59.9991 26.2245 56.4094 23.3673 52.6145 24.1837L35.8966 27.6531L50.153 18.3673C53.435 16.2245 53.8453 11.7347 51.0761 8.97959C48.3068 6.22449 43.794 6.73469 41.6402 10L32.3068 24.1837L35.794 7.55102C36.8197 3.57143 33.9479 0 30.0504 0C26.153 0 23.2812 3.57143 24.1017 7.34694L27.5889 23.9796L18.2556 9.69388C16.1017 6.42857 11.5889 6.02041 8.81966 8.67347C6.05043 11.4286 6.56325 15.9184 9.8453 18.0612L24.1017 27.3469L7.38376 23.9796C3.58889 23.1633 -0.000854492 26.0204 -0.000854492 29.898C-0.000854492 33.7755 3.58889 36.6327 7.38376 35.9184Z" fill="#CB997E"/>
+                            </svg>                    
+                            <span class="italic">Единое</span>
+                            <span class="spacer"></span>                    
+                        </span>
+                        пространство<br>
+                        <span class="row accent">
+                            <span class="spacer"></span>
+                            <span>
+                                <span class="italic">для</span> красоты
+                            </span>
+                        </span>
+                        и здоровья
+                    </h1>
+                    <p class="description">Комплекс услуг салона красоты и SPA-центра</p>
+                </div>
+                <div class="item grid-item2">
+                    <form action="">
+                        <div class="top-form">
+                            <div class="form-row">
+                                <div class="input-icon">
+                                    <input type="text" placeholder="Ваше имя">
+                                    <svg class="icon" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                        <path d="M3.31579 3.31579C3.31579 5.14389 4.80347 6.63158 6.63158 6.63158C8.45968 6.63158 9.94737 5.14389 9.94737 3.31579C9.94737 1.48768 8.45968 0 6.63158 0C4.80347 0 3.31579 1.48768 3.31579 3.31579ZM13.2632 14V13.2632C13.2632 10.4197 10.9487 8.10526 8.10526 8.10526H5.15789C2.31368 8.10526 0 10.4197 0 13.2632V14H13.2632Z"/>
+                                    </svg> 
+                                </div>                                   
+                            </div>
+                            <div class="form-row">
+                                <div class="input-icon invalid">
+                                    <input type="text" placeholder="Ваш номер">
+                                    <svg class="icon" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                        <path d="M5.91891 8.02681C6.73071 8.85034 7.71296 9.48615 8.79669 9.88959L10.2628 8.72292C10.3063 8.69299 10.3578 8.67696 10.4106 8.67696C10.4634 8.67696 10.5149 8.69299 10.5584 8.72292L13.2806 10.4768C13.3839 10.5389 13.4714 10.6243 13.5361 10.726C13.6008 10.8278 13.641 10.9432 13.6534 11.0631C13.6659 11.1831 13.6503 11.3042 13.6078 11.4171C13.5654 11.53 13.4973 11.6314 13.4089 11.7135L12.1334 12.9735C11.9507 13.154 11.7262 13.2864 11.4798 13.359C11.2335 13.4316 10.9731 13.4421 10.7217 13.3896C8.21421 12.8717 5.90302 11.6588 4.05224 9.88959C2.24254 8.10274 0.990236 5.82914 0.44724 3.34459C0.3936 3.09711 0.404795 2.83998 0.479742 2.5981C0.554689 2.35623 0.690846 2.13782 0.875018 1.96403L2.19724 0.688476C2.27906 0.604393 2.37885 0.539911 2.48912 0.499856C2.59939 0.459802 2.7173 0.445214 2.83401 0.457184C2.95072 0.469154 3.06321 0.507373 3.16306 0.568978C3.26291 0.630584 3.34752 0.713979 3.41057 0.81292L5.2228 3.50014C5.25405 3.54234 5.27093 3.59346 5.27093 3.64598C5.27093 3.69849 5.25405 3.74961 5.2228 3.79181L4.02891 5.22681C4.4433 6.28884 5.08891 7.24531 5.91891 8.02681Z"/>
+                                    </svg> 
+                                </div>                                   
+                            </div>
+                            <div class="form-row">
+                                <button type="submit" class="button arrow-right">
+                                    Записаться онлайн
+                                    <svg width="16" height="8" viewBox="0 0 16 8" fill="none">
+                                        <path d="M12.01 3H0V5H12.01V8L16 4L12.01 0V3Z"/>
+                                    </svg> 
+                                </button>                                   
+                            </div>
+                            <div class="form-row">
+                                <input type="checkbox" id="acceptance" checked>
+                                <label for="acceptance">Вы соглашаетесь с <a href="#" class="underline">условиями оферты</a></label>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="top-iconbox">
+                        <div class="row"><img src="./src/media/top_icon1.svg" alt=""><p>Стилист по волосам</p></div>
+                        <div class="row"><img src="./src/media/top_icon2.svg" alt=""><p>Массажный кабинет</p></div>
+                        <div class="row"><img src="./src/media/top_icon3.svg" alt=""><p>Ногтевой сервис</p></div>
+                        <div class="row"><img src="./src/media/top_icon4.svg" alt=""><p>Уход за телом</p></div>
+                    </div>
+                </div>
+                <div class="item grid-item3">
+                    <img src="./src/media/top-photo.png" alt="">
+                    <img id="top-photo-bg" src="./src/media/photo_bg.svg" alt="">
+                </div>
+                <svg id="top-bg" width="707" height="974" viewBox="0 0 707 974" fill="none">
+                    <rect y="97.2432" width="560" height="890" transform="rotate(-10 0 97.2432)" fill="white"/>
+                </svg>   
+                <svg id="top-ellipse" width="560" height="907" viewBox="0 0 560 907" fill="none">
+                    <path d="M0 280C0 125.36 125.36 0 280 0C434.64 0 560 125.36 560 280V627C560 781.64 434.64 907 280 907C125.36 907 0 781.64 0 627V280Z" fill="#F2E6DE"/>
+                </svg>                                    
+            </div>
+        </section>
+        <section class="discount">
+            <div class="container">
+                <h2>
+                    <span class="spacer-fixed"></span>
+                    <span class="italic">Воспользуйтесь</span><br>
+                    специальными<br>
+                    <span class="left-offset">предложениями</span>
+                </h2>
+                <div class="discount-block">
+                    <p class="description">Следите за нашими акциями, они постоянно обновляются</p>
+                    <div class="discount-inner">
+                        <div class="discount-item">
+                            <img src="./src/media/discount1.jpg" alt="">
+                            <h3>Скидка 5%</h3>
+                            <span class="spacer-fixed separator"></span>
+                            <p class="bold">На классический маникюр</p>
+                            <p>до 28 апреля 2021 года</p>
+                        </div>
+                        <div class="discount-item">
+                            <img src="./src/media/discount2.jpg" alt="">
+                            <h3>Скидка 10%</h3>
+                            <span class="spacer-fixed separator"></span>
+                            <p class="bold">На детский маникюр</p>
+                            <p>до 3 мая 2021 года</p>
+                        </div>
+                        <div class="discount-item">
+                            <img src="./src/media/discount3.jpg" alt="">
+                            <h3>Скидка 15%</h3>
+                            <span class="spacer-fixed separator"></span>
+                            <p class="bold">На покрытие обычным лаком «Френч»</p>
+                            <p>до 6 мая 2021 года</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="discount-bg"></div>
+                <svg id="discount-shape" width="660" height="821" viewBox="0 0 660 821" fill="none">
+                    <path d="M572.041 270.631C633.443 376.983 661.896 488.906 658.283 583.873C654.67 678.848 618.996 756.786 552.237 795.33C485.478 833.873 400.145 825.798 316.087 781.44C232.037 737.085 149.335 656.483 87.933 550.131C26.531 443.78 -1.92163 331.857 1.69121 236.89C5.30436 141.914 40.9779 63.9765 107.737 25.433C174.496 -13.1104 259.829 -5.03567 343.887 39.3228C427.937 83.6777 510.639 164.28 572.041 270.631Z" stroke="#CB997E"/>
+                </svg>                    
+            </div>           
+        </section>
+        <section class="owner">
+            <div class="container">
+                <h2>
+                    <span class="spacer-fixed"></span>
+                    <span class="italic">Красивым быть</span><br>
+                    не значит им родиться,<br>
+                    <span class="left-offset">ведь красоте мы можем</span><br>
+                    научиться
+                </h2>
+                <div class="col2">
+                    <div class="item">
+                    <p>Добро пожаловать!</p>
+                    <h3>Меня зовут Регина Шульжевская.</h3>
+                    <p>Я являюсь основателем «Шиколад SPA».</p>
+                    <p>Вместе со своей командой мы создали волшебное место,
+                        в котором вы сможете воплотить в мечту все свои желания:
+                        от маникюра и педикюра до массажа или обертывания.</p>
+                    <p>У нас вы получите высшее качество услуг и индивидуальное
+                        обслуживание.</p>
+                    <p>Приходите к нам и оцените уровень наших мастеров!</p>
+                    <div class="video">
+                        <a data-fancybox href="https://www.youtube.com/watch?v=VqhCQZaH4Vs&amp;autoplay=1&amp;rel=0&amp;controls=0&amp;showinfo=0">
+                            <img id="video-overlay" src="./src/media/video_overlay.svg" alt="">
+                        </a>
+                        <img src="./src/media/video_poster.png" alt="">
+                    </div>
+                    </div>
+                    <div class="item">
+                        <div class="photo">
+                            <img src="./src/media/owner_photo.jpg" alt="">
+                            <div class="photo-bg"></div>
+                            <svg id="photo-shape" width="557" height="911" viewBox="0 0 557 911" fill="none">
+                                <path d="M556.5 455.5C556.5 581.206 525.346 694.988 475.003 777.326C424.654 859.674 355.166 910.5 278.5 910.5C201.834 910.5 132.346 859.674 81.9973 777.326C31.6542 694.988 0.5 581.206 0.5 455.5C0.5 329.794 31.6542 216.012 81.9973 133.674C132.346 51.3265 201.834 0.5 278.5 0.5C355.166 0.5 424.654 51.3265 475.003 133.674C525.346 216.012 556.5 329.794 556.5 455.5Z" stroke="#CB997E"/>
+                            </svg>                                
+                        </div>
+                        <a href="#" class="button arrow-right">
+                            Перейти в Instagram
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M8 0C5.82523 0 5.55419 0.0105013 4.70309 0.0465058C3.84848 0.0885111 3.27041 0.221028 2.76035 0.419052C2.22651 0.620588 1.74305 0.936125 1.34367 1.34367C0.934988 1.74212 0.619276 2.22584 0.419052 2.76035C0.221028 3.27041 0.0885111 3.84848 0.0465058 4.70309C0.008001 5.5547 0 5.82523 0 8C0 10.1748 0.0105013 10.4458 0.0465058 11.2969C0.0885111 12.149 0.221028 12.7296 0.419052 13.2397C0.620588 13.7735 0.936125 14.257 1.34367 14.6563C1.74212 15.065 2.22584 15.3807 2.76035 15.581C3.27041 15.7765 3.85098 15.9115 4.70309 15.9535C5.55469 15.992 5.82523 16 8 16C10.1748 16 10.4458 15.9895 11.2969 15.9535C12.149 15.9115 12.7296 15.776 13.2397 15.581C13.7735 15.3794 14.257 15.0639 14.6563 14.6563C15.0655 14.2583 15.3813 13.7745 15.5809 13.2397C15.7765 12.7296 15.9115 12.149 15.9535 11.2969C15.992 10.4453 16 10.1748 16 8C16 5.82523 15.9895 5.55419 15.9535 4.70309C15.9115 3.85098 15.776 3.26741 15.5809 2.76035C15.3794 2.22651 15.0639 1.74305 14.6563 1.34367C14.2583 0.934462 13.7745 0.618667 13.2397 0.419052C12.7296 0.221028 12.149 0.0885111 11.2969 0.0465058C10.4453 0.008001 10.1748 0 8 0ZM8 1.44018C10.1358 1.44018 10.3908 1.45068 11.2349 1.48669C12.0135 1.52319 12.4376 1.65321 12.7191 1.76322C13.0671 1.8917 13.3822 2.09619 13.6412 2.3618C13.9064 2.61974 14.1101 2.93404 14.2373 3.28141C14.3473 3.56295 14.4773 3.987 14.5138 4.7656C14.5498 5.6097 14.5603 5.86523 14.5603 8.0005C14.5603 10.1358 14.5498 10.3913 14.5108 11.2354C14.4688 12.014 14.3388 12.4381 14.2293 12.7196C14.0778 13.0951 13.9087 13.3577 13.6297 13.6417C13.3698 13.9057 13.055 14.1092 12.7076 14.2378C12.4296 14.3478 11.9995 14.4778 11.2179 14.5143C10.3693 14.5503 10.1193 14.5608 7.978 14.5608C5.83673 14.5608 5.5872 14.5503 4.73759 14.5113C3.95899 14.4693 3.52944 14.3393 3.24791 14.2298C2.86786 14.0783 2.60733 13.9092 2.32829 13.6302C2.04676 13.3487 1.86773 13.0806 1.72972 12.7081C1.6177 12.4301 1.48969 12 1.44818 11.2184C1.41968 10.3798 1.40618 10.1198 1.40618 7.9885C1.40618 5.85823 1.41968 5.5977 1.44818 4.74859C1.48969 3.967 1.6177 3.53794 1.72972 3.25891C1.86773 2.87836 2.04726 2.61833 2.32829 2.33679C2.60683 2.05826 2.86786 1.87824 3.24791 1.73722C3.52944 1.6277 3.94849 1.49769 4.73009 1.45868C5.5787 1.42818 5.82873 1.41718 7.967 1.41718L8 1.44018ZM8 3.89399C7.4606 3.89379 6.92646 3.99989 6.42808 4.20621C5.92971 4.41254 5.47687 4.71505 5.09546 5.09646C4.71405 5.47788 4.41154 5.93071 4.20521 6.42908C3.99889 6.92746 3.89279 7.46161 3.89299 8.001C3.89279 8.5404 3.99889 9.07455 4.20521 9.57292C4.41154 10.0713 4.71405 10.5241 5.09546 10.9055C5.47687 11.2869 5.92971 11.5895 6.42808 11.7958C6.92646 12.0021 7.4606 12.1082 8 12.108C8.5394 12.1082 9.07354 12.0021 9.57192 11.7958C10.0703 11.5895 10.5231 11.2869 10.9045 10.9055C11.2859 10.5241 11.5885 10.0713 11.7948 9.57292C12.0011 9.07455 12.1072 8.5404 12.107 8.001C12.1072 7.46161 12.0011 6.92746 11.7948 6.42908C11.5885 5.93071 11.2859 5.47788 10.9045 5.09646C10.5231 4.71505 10.0703 4.41254 9.57192 4.20621C9.07354 3.99989 8.5394 3.89379 8 3.89399ZM8 10.6678C6.52582 10.6678 5.33317 9.47519 5.33317 8.001C5.33317 6.52682 6.52582 5.33417 8 5.33417C9.47418 5.33417 10.6668 6.52682 10.6668 8.001C10.6668 9.47519 9.47418 10.6678 8 10.6678ZM13.2327 3.72997C13.2324 3.98483 13.131 4.22917 12.9506 4.40929C12.7703 4.58941 12.5259 4.69059 12.271 4.69059C12.145 4.69059 12.0202 4.66577 11.9038 4.61754C11.7874 4.56931 11.6816 4.49863 11.5925 4.40952C11.5034 4.32041 11.4327 4.21462 11.3845 4.0982C11.3362 3.98177 11.3114 3.85699 11.3114 3.73097C11.3114 3.60495 11.3362 3.48016 11.3845 3.36374C11.4327 3.24731 11.5034 3.14152 11.5925 3.05241C11.6816 2.9633 11.7874 2.89262 11.9038 2.84439C12.0202 2.79617 12.145 2.77135 12.271 2.77135C12.7996 2.77135 13.2327 3.2014 13.2327 3.72997Z" fill="#CB997E"/>
+                            </svg>                                
+                        </a> 
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="about">
+            <div class="container">
+                <h2>
+                    <span class="spacer-fixed"></span>
+                    <span class="italic">«Шиколад» — это уникальное место</span><br>
+                    для всей семьи, где каждый<br>
+                    <span class="left-offset">найдёт себе любимое занятие</span>
+                </h2>
+                <div class="col2">
+                    <div class="item">
+                        <img id="about-photo" src="./src/media/about_photo.jpg" alt="">
+                    </div>
+                    <div class="item">
+                        <p class="description">Вы можете сэкономить время и объединить
+                            спорт, здоровье и красоту в одном месте
+                            за счет коллаборации «Шиколад Фитнес»
+                            и «Шиколад SPA»</p>
+                        <div class="col2">
+                            <div class="item">
+                                <img src="./src/media/about-1.jpg" alt="">
+                                <p>Оригинальная косметика
+                                    и материалы от лучших
+                                    мировых брендов</p>
+                            </div>
+                            <div class="item">
+                                <img src="./src/media/about-2.jpg" alt="">
+                                <p>Регулярная дезинфекция 
+                                    всех поверхностей</p>
+                            </div>
+                            <div class="item">
+                                <img src="./src/media/about-3.jpg" alt="">
+                                <p>Все мастера регулярно
+                                    проходят обучение
+                                    и повышают квалификацию</p>
+                            </div>
+                            <div class="item">
+                                <img src="./src/media/about-4.jpg" alt="">
+                                <p>Спортивный и фитнес залы,
+                                    beauty-процедуры и SPA уход
+                                    для женщин, мужчин и детей</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-bg"></div>
+            </div>
+        </section>
+        <section class="photo-gallery">
+            <div class="container">
+                <h2>
+                    <span class="spacer-fixed"></span>
+                    <span class="italic">Вас ждёт атмосфера</span><br>
+                    красоты и уюта
+                </h2>
+                <div class="gallery-grid">
+                    <div class="grid-item1 mt round-vertical">
+                        <a href="./src/media/gallery_item1.jpg" data-fancybox="index-gallery" data-type="image"><img src="./src/media/gallery_item1.jpg" alt=""></a>
+                    </div>
+                    <div class="grid-item2">
+                        <a href="./src/media/gallery_item2.jpg" data-fancybox="index-gallery" data-type="image"><img src="./src/media/gallery_item2.jpg" alt=""></a>
+                    </div>
+                    <div class="grid-item3 mt">
+                        <a href="./src/media/gallery_item3.jpg" data-fancybox="index-gallery" data-type="image"><img src="./src/media/gallery_item3.jpg" alt=""></a>
+                    </div>
+                    <div class="grid-item4">
+                        <a href="./src/media/gallery_item4.jpg" data-fancybox="index-gallery" data-type="image"><img src="./src/media/gallery_item4.jpg" alt=""></a>
+                    </div>
+                    <div class="grid-item5">
+                        <a href="./src/media/gallery_item5.jpg" data-fancybox="index-gallery" data-type="image"><img src="./src/media/gallery_item5.jpg" alt=""></a>
+                    </div>
+                    <div class="grid-item6">
+                        <a href="./src/media/gallery_item6.jpg" data-fancybox="index-gallery" data-type="image"><img src="./src/media/gallery_item6.jpg" alt=""></a>
+                    </div>
+                    <div class="grid-item7 round-horizontal rotate">
+                        <a href="./src/media/gallery_item7.jpg" data-fancybox="index-gallery" data-type="image"><img src="./src/media/gallery_item7.jpg" alt=""></a>
+                    </div>
+                    <svg id="gallery-shape2" width="342" height="890" viewBox="0 0 342 890" fill="none">
+                        <path d="M340.396 450.897C336.109 573.661 313.219 684.116 279.693 763.453C262.929 803.124 243.516 834.989 222.462 856.723C201.408 878.458 178.754 890.024 155.487 889.211C132.22 888.399 110.428 875.281 90.9411 852.131C71.4545 828.98 54.3121 795.839 40.3563 755.096C12.4458 673.613 -2.68401 561.83 1.60299 439.067C5.88998 316.303 28.7806 205.848 62.3069 126.511C79.0708 86.8403 98.4833 54.9755 119.537 33.2406C140.591 11.5058 163.245 -0.0597082 186.513 0.752802C209.78 1.56531 231.572 14.6829 251.058 37.8335C270.545 60.984 287.687 94.1254 301.643 134.868C329.554 216.351 344.683 328.134 340.396 450.897Z" stroke="#CB997E"/>
+                    </svg> 
+                </div>
+                <img id="gallery-shape1" src="./src/media/gallery_shape1.svg" alt="">
+                <svg id="gallery-shape3" width="561" height="891" viewBox="0 0 561 891" fill="none">
+                    <path d="M559.69 435.746C563.975 558.476 536.553 670.656 488.778 752.811C441 834.972 372.913 887.04 295.873 889.73C218.833 892.42 147.279 845.229 93.8857 766.601C40.4968 687.978 5.31587 577.984 1.03007 455.255C-3.25573 332.526 24.1668 220.346 71.9412 138.191C119.72 56.0293 187.807 3.96186 264.847 1.27157C341.887 -1.41873 413.441 45.7723 466.834 124.401C520.223 203.023 555.404 313.017 559.69 435.746Z" stroke="#CB997E"/>
+                </svg>                                 
+            </div>
+        </section>
+        <section class="services">
+            <div class="container">
+                <h2>
+                    <span class="spacer-fixed"></span>
+                    <span class="italic">Прайс-лист на все</span><br>
+                    услуги «Шиколад SPA»
+                </h2>
+                <div class="filter-buttons">
+                    <div class="item">
+                        <button class="button filter" data-filter=".service1">Маникюр</button>
+                    </div>
+                    <div class="item">
+                        <button class="button filter" data-filter=".service2">Педикюр</button>
+                    </div>
+                    <div class="item">
+                        <button class="button filter" data-filter=".service3">Дополнительные услуги</button>
+                    </div>
+                    <div class="item">
+                        <button class="button filter" data-filter=".service4">Массаж</button>
+                    </div>
+                    <div class="item">
+                        <button class="button filter" data-filter=".service5">Парикмахерские услуги</button>
+                    </div>
+                </div>
+                <div class="filter-items">
+                    <div class="col2 service1">
+                        <div class="item">
+                            <h3>Маникюр</h3>
+                            <span class="spacer-fixed separator"></span>
+                            <div class="row">
+                                <p>Маникюр классический (обрезной)</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">600 Р</p>
+                            </div>
+                            <div class="row">
+                                <p>Европейский (без покрытия)</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">600 Р</p>
+                            </div>
+                            <div class="row">
+                                <p>Комбинированный</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">800 Р</p>
+                            </div>
+                            <div class="row">
+                                <p>Детский маникюр</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">500 Р</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="./src/media/filter_photo1.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="col2 service2">
+                        <div class="item">
+                            <h3>Педикюр</h3>
+                            <span class="spacer-fixed separator"></span>
+                            <div class="row">
+                                <p>Педикюр классический</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">1 300 Р</p>
+                            </div>
+                            <div class="row">
+                                <p>Педикюр аппаратный, комбинированный</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">1 500 Р</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="./src/media/filter_photo2.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="col2 service3">
+                        <div class="item">
+                            <h3>Дополнительные услуги</h3>
+                            <span class="spacer-fixed separator"></span>
+                            <div class="row">
+                                <p>Покрытие лечебным лаком</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">200 Р</p>
+                            </div>
+                            <div class="row">
+                                <p>Покрытие гель-лаком</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">800 Р</p>
+                            </div>
+                            <div class="row">
+                                <p>Покрытие гель лаком «Френч»</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">1 000 Р</p>
+                            </div>
+                            <div class="row">
+                                <p>Выравнивание ногтевой пластины</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">500 Р</p>
+                            </div>
+                            <div class="row">
+                                <p>Покрытие обычным лаком</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">400 Р</p>
+                            </div>
+                            <div class="row">
+                                <p>Покрытие обычным лаком «Френч»</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">600 Р</p>
+                            </div>
+                            <div class="row">
+                                <p>Снятие гель-лака</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">400 Р</p>
+                            </div>
+                            <div class="row">
+                                <p>Снятие обычного лака</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">100 Р</p>
+                            </div>
+                            <div class="row">
+                                <p>Ремонт 1 натурального ногтя</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">200 Р</p>
+                            </div>
+                            <p class="subcat">Дизайн 1 ногтя:</p>
+                            <div class="row">
+                                <p>Легкий дизайн</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">100 Р</p>
+                            </div>
+                            <div class="row">
+                                <p>Сложный дизайн</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">300 Р</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="./src/media/filter_photo3.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="col2 service4">
+                        <div class="item">
+                            <h3>Массаж</h3>
+                            <span class="spacer-fixed separator"></span>
+                            <div class="row">
+                                <p>Классический массаж всего тела 90 мин</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">3 000 Р</p>
+                            </div>
+                            <div class="row">
+                                <p>Классический массаж всего тела 60 мин</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">2 500 Р</p>
+                            </div>
+                            <div class="row">
+                                <p>Массаж «Relax» с аромамаслами 60 мин</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">2 500 Р</p>
+                            </div>
+                            <div class="row">
+                                <p>Медовый массаж проблемных зон<br>(бёдра, ягодицы, живот) 60 мин</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">3 000 Р</p>
+                            </div>
+                            <div class="row">
+                                <p>Антицеллюлитный массаж</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">2 700 Р</p>
+                            </div>
+                            <div class="row">
+                                <p>Баночный массаж проблемных зон<br>(бёдра, ягодицы, живот) 40 мин</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">2 000 Р</p>
+                            </div>
+                            <div class="row">
+                                <p>Креольский массаж проблемных зон<br>(бёдра, ягодицы, живот) 40 мин</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">2 000 Р</p>
+                            </div>
+                            <div class="row">
+                                <p>Спина 40 мин</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">1 500 Р</p>
+                            </div>
+                            <div class="row">
+                                <p>Шейно-воротниковая зона</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">1 000 Р</p>
+                            </div>
+                            <div class="row">
+                                <p>Спина + шейно-воротниковая зона 60 мин</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">2 500 Р</p>
+                            </div>
+                            <div class="row">
+                                <p>Ноги + стопы 30 мин</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">1 500 Р</p>
+                            </div>
+                            <div class="row">
+                                <p>Комплекс по профилактике и коррекции<br>сколиоза и кифоза (ЛФК + массаж) (сеанс)</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">4 000 Р</p>
+                            </div>
+                            <div class="row">
+                                <p>Обертывание (сауна 15 мин/пилинг/<br>маска для тела) 1,40 мин</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">4 500 Р</p>
+                            </div>
+                            <div class="row">
+                                <p>Морской загар (сауна 15 мин/пилинг<br>солярий/маска для тела) 1,40 мин</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">4 900 Р</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="./src/media/filter_photo4.jpg" alt="">
+                        </div>
+                        <div class="services-bg" id="services-bg2"></div>
+                    </div>
+                    <div class="col2 service5">
+                        <div class="item">
+                            <h3>Парикмахерские услуги</h3>
+                            <span class="spacer-fixed separator"></span>
+                            <div class="row">
+                                <p>Стрижка (мытье, диагностика, сушка)</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">1 700 Р</p>
+                            </div>
+                            <span class="divider"></span>
+                            <p class="subcat">Окрашивание  на красителях Schwarzkopf:</p>
+                            <div class="row">
+                                <p>Окрашивание корней до 40 гр</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">3 500 Р</p>
+                            </div>
+                            <div class="row">
+                                <p>Окрашивание коротких волос до 70 гр</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">4 500 Р</p>
+                            </div>
+                            <div class="row">
+                                <p>Окрашивание средних волос до 120 гр</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">5 500 Р</p>
+                            </div>
+                            <div class="row">
+                                <p>Окрашивание длинных волос до 150 гр</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">6 500 Р</p>
+                            </div>
+                            <span class="divider"></span>
+                            <p class="subcat">Окрашивание  на красителях `KYDRA:</p>
+                            <div class="row">
+                                <p>Окрашивание корней до 40 гр</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">5 500 Р</p>
+                            </div>
+                            <div class="row">
+                                <p>Окрашивание коротких волос до 70 гр</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">6 500 Р</p>
+                            </div>
+                            <div class="row">
+                                <p>Окрашивание средних волос до 120 гр</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">7 900 Р</p>
+                            </div>
+                            <div class="row">
+                                <p>Окрашивание длинных волос до 150 гр</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">9 100 Р</p>
+                            </div>
+                            <span class="divider"></span>
+                            <p class="subcat">Cложное окрашивание Shatush / Balayage / Airtouch:</p>
+                            <div class="row">
+                                <p>Волосы до плеч</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">7 000 Р</p>
+                            </div>
+                            <div class="row">
+                                <p>Волосы ниже плеч</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">11 000 Р</p>
+                            </div>
+                            <span class="divider"></span>
+                            <p class="subcat">Смывка искусственного пигмента:</p>
+                            <div class="row">
+                                <p>Процедура восстановления волос<br>на косметике JOIKO (длина до плеч)</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">4 000 Р</p>
+                            </div>
+                            <div class="row">
+                                <p>Процедура восстановления волос<br>на косметике JOIKO (длина ниже плеч)</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">6 000 Р</p>
+                            </div>
+                            <span class="divider"></span>
+                            <div class="row">
+                                <p>Укладка вечерняя</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">4 500 Р</p>
+                            </div>
+                            <div class="row">
+                                <p>Укладка на горячий инструмент</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">2 300 Р</p>
+                            </div>
+                            <div class="row">
+                                <p>Экспресс укладка</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">900 Р</p>
+                            </div>
+                            <div class="row">
+                                <p>Укладка коммерческая</p>
+                                <span class="dotted-spacer"></span>
+                                <p class="bold">1 700 Р</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="./src/media/filter_photo5.jpg" alt="">
+                        </div>
+                        <div class="services-bg" id="services-bg3">
+                            <svg width="642" height="642" viewBox="0 0 642 642" fill="none">
+                                <path d="M257.796 346.715L78.9229 383.835C78.9213 383.835 78.9198 383.836 78.9182 383.836C38.6101 391.42 0.5 361.07 0.5 319.908C0.5 278.742 38.6113 248.402 78.9102 257.07L78.9166 257.072L257.799 293.102L258.17 292.193L105.627 192.836C70.7695 170.078 65.3334 122.413 94.7288 93.1639C124.142 64.9886 172.058 69.3314 194.926 104L294.792 256.855L295.7 256.479L258.387 78.5096L258.386 78.5061C249.675 38.4209 280.164 0.5 321.549 0.5C362.924 0.5 393.414 38.4057 382.521 80.6711L382.518 80.6822L382.516 80.6933L345.203 258.663L346.11 259.04L445.976 107.275C468.852 72.5943 516.769 67.1845 546.17 96.4361C575.581 125.696 571.219 173.361 536.373 196.112L383.83 295.469L384.204 296.377L563.086 259.255L563.09 259.254C603.389 250.585 641.5 280.926 641.5 322.092C641.5 362.172 603.383 393.597 563.09 384.93L563.086 384.929L384.204 347.806L383.83 348.715L536.373 448.072C571.23 470.83 576.666 518.494 547.272 547.743C517.859 575.92 469.942 571.577 447.074 536.909C447.074 536.909 447.074 536.909 447.074 536.908L347.207 385.144L346.3 385.521L383.613 563.49L383.614 563.494C392.325 603.579 361.836 641.5 320.451 641.5C280.158 641.5 248.578 603.573 257.289 563.494L257.289 563.49L294.602 385.521L293.695 385.144L193.833 536.902C193.832 536.904 193.831 536.905 193.83 536.906C170.956 570.496 123.041 575.908 93.638 546.659C65.3206 517.398 69.6837 469.731 104.53 446.98L258.169 347.624L257.796 346.715Z" stroke="#CB997E"/>
+                            </svg>                                
+                        </div>
+                    </div>
+                    <button id="services-more">
+                        Посмотреть ещё
+                        <svg width="16" height="8" viewBox="0 0 16 8" fill="none">
+                            <path d="M12.01 3H0V5H12.01V8L16 4L12.01 0V3Z" fill="#CB997E"/>
+                        </svg>                            
+                    </button>
+                </div>
+                <div id="services-bg1">
+                    <svg id="services-shape1" width="660" height="821" viewBox="0 0 660 821" fill="none">
+                        <path d="M572.041 270.631C633.443 376.983 661.896 488.906 658.283 583.873C654.67 678.848 618.996 756.786 552.237 795.33C485.478 833.873 400.145 825.798 316.087 781.44C232.037 737.085 149.335 656.483 87.9331 550.131C26.531 443.78 -1.9216 331.857 1.69125 236.89C5.30439 141.914 40.9779 63.9765 107.737 25.433C174.496 -13.1104 259.829 -5.03567 343.887 39.3228C427.937 83.6777 510.639 164.28 572.041 270.631Z" stroke="#CB997E"/>
+                    </svg>                        
+                </div>
+                <svg id="services-ellipse" width="560" height="907" viewBox="0 0 560 907" fill="none">
+                    <path d="M0 280C0 125.36 125.36 0 280 0C434.64 0 560 125.36 560 280V627C560 781.64 434.64 907 280 907C125.36 907 0 781.64 0 627V280Z" fill="#F2E6DE"/>
+                </svg>
+            </div>
+        </section>
+        <section class="workers">
+            <div class="container">
+                <h2>
+                    <span class="spacer-fixed"></span>
+                    <span class="italic">В нашем центре работают</span><br>
+                    профессиональные<br>
+                    <span class="left-offset">мастера с опытом от 5 лет</span>
+                </h2>
+                <div class="slider">
+                    <button class="slide-prev">
+                        <svg width="16" height="14" viewBox="0 0 16 14" fill="none">
+                            <path d="M3.99 8H16V6H3.99V3L0 7L3.99 11V8Z"/>
+                        </svg>      
+                    </button>
+                    <button class="slide-next">
+                        <svg width="16" height="8" viewBox="0 0 16 8" fill="none">
+                            <path d="M12.01 3L0 3V5L12.01 5V8L16 4L12.01 0V3Z"/>
+                        </svg>                                                     
+                    </button>
+                    <div class="slider-index">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="./src/media/slider_photo1.jpg" alt="">
+                                <h3>Ирина Иванова</h3>
+                                <span class="spacer-fixed separator"></span>
+                                <p>Мастер маникюра</p>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./src/media/slider_photo1.jpg" alt="">
+                                <h3>Александра Косинская</h3>
+                                <span class="spacer-fixed separator"></span>
+                                <p>Парикмахер</p>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./src/media/slider_photo1.jpg" alt="">
+                                <h3>Валерия Михалковская</h3>
+                                <span class="spacer-fixed separator"></span>
+                                <p>Массажист</p>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="contact">
+            <div class="container">
+                <h2>
+                    <span class="spacer-fixed"></span>
+                    <span class="italic">Позвольте себе</span><br>
+                    быть красивой!<br>
+                    <span class="left-offset">Мы вас ждём</span>
+                </h2>
+                <svg id="contact-bg" width="585" height="804" viewBox="0 0 585 804" fill="none">
+                    <path d="M65.1245 208.62C95.2496 66.8926 234.564 -23.5789 376.291 6.54619C518.019 36.6713 608.49 175.985 578.365 317.713L519.321 595.495C489.196 737.223 349.882 827.694 208.154 797.569C66.4266 767.444 -24.045 628.13 6.08012 486.402L65.1245 208.62Z" fill="white"/>
+                </svg>
+                <svg id="contact-shape" width="767" height="708" viewBox="0 0 767 708" fill="none">
+                    <path d="M558.059 146.203C652.135 225.142 717.74 319.885 747.775 409.231C777.813 498.586 772.253 582.455 724.158 639.774C676.062 697.092 594.432 717.131 501.218 703.066C408.015 689.001 303.318 640.845 209.242 561.906C115.167 482.968 49.5619 388.224 19.5267 298.878C-10.5117 209.523 -4.95183 125.654 43.144 68.3355C91.2399 11.0171 172.87 -9.02208 266.083 5.04364C359.287 19.1079 463.984 67.2642 558.059 146.203Z" stroke="#CB997E"/>
+                </svg>                    
+            </div>
+            <div class="fw-map">
+                <div class="container">
+                    <div class="contact-details">
+                        <img src="./src/media/contact-icon1.svg" alt=""><p>г. Мытищи, Колпакова 24а</p><br>
+                        <img src="./src/media/contact-icon2.svg" alt=""><p>09:00-22:00</p><br>
+                        <img src="./src/media/contact-icon3.svg" alt=""><a href="tel:84957977739">8 (495) 797-77-39</a><br>
+                        <img src="./src/media/contact-icon4.svg" alt=""><a href="mailto:info@shikoladspa.ru">info@shikoladspa.ru</a><br>
+                        <img src="./src/media/contact-icon5.svg" alt=""><a id="contact-ig" href="#">Наш инстаграм</a>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A1752b1116730428139c93b33d67c4fcfe585e64abf9d1858abf920fb2cc56fcf&amp;width=100%25&amp;height=100%&amp;lang=ru_RU&amp;scroll=false"></script>
+                </div>
+            </div>            
+        </section>
+    </article>
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div class="item">
+                <p>
+                    Реквизиты:<br>
+                    ИНН 00000000000<br>
+                    ОГРН 0000000000000000
+                </p>
+                <a class="privacy" href="#">Политика конфиденциальности</a>
+            </div>
+            <div class="item">
+                <img src="./src/media/logo_footer.svg" alt="">
+                <img src="./src/media/mf_logo.svg" alt="">
+            </div>
+            <div class="item">
+                <a href="#" class="tel">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                        <path d="M5.91804 8.02681C6.72984 8.85034 7.71209 9.48615 8.79582 9.88959L10.2619 8.72292C10.3054 8.69299 10.3569 8.67696 10.4097 8.67696C10.4625 8.67696 10.514 8.69299 10.5575 8.72292L13.2797 10.4768C13.3831 10.5389 13.4705 10.6243 13.5352 10.726C13.6 10.8278 13.6401 10.9432 13.6526 11.0631C13.665 11.1831 13.6494 11.3042 13.607 11.4171C13.5645 11.53 13.4964 11.6314 13.408 11.7135L12.1325 12.9735C11.9498 13.154 11.7253 13.2864 11.479 13.359C11.2326 13.4316 10.9722 13.4421 10.7208 13.3896C8.21334 12.8717 5.90215 11.6588 4.05137 9.88959C2.24167 8.10274 0.989366 5.82914 0.446371 3.34459C0.39273 3.09711 0.403925 2.83998 0.478873 2.5981C0.55382 2.35623 0.689977 2.13782 0.874149 1.96403L2.19637 0.688476C2.27819 0.604393 2.37798 0.539911 2.48825 0.499856C2.59852 0.459802 2.71643 0.445214 2.83314 0.457184C2.94985 0.469154 3.06234 0.507373 3.16219 0.568978C3.26204 0.630584 3.34665 0.713979 3.4097 0.81292L5.22193 3.50014C5.25318 3.54234 5.27006 3.59346 5.27006 3.64598C5.27006 3.69849 5.25318 3.74961 5.22193 3.79181L4.02804 5.22681C4.44243 6.28884 5.08804 7.24531 5.91804 8.02681Z" fill="#CB997E"/>
+                    </svg>                        
+                    8 (495) 797-77-39
+                </a>
+                <a href="#" class="button arrow-right">
+                    Запись онлайн
+                    <svg width="16" height="8" viewBox="0 0 16 8" fill="none">
+                        <path d="M12.01 3H0V5H12.01V8L16 4L12.01 0V3Z"/>
+                    </svg> 
+                </a> 
+            </div>
+            <img id="mf-logo_mobile" src="./src/media/mf_logo.svg" alt="">
+        </div>
+    </footer>
+    <script src="src/js/jquery-3.6.0.min.js"></script>
+    <script src="src/js/jquery.fancybox.min.js"></script>
+    <script src="src/js/swiper-bundle.min.js"></script>
+    <script src="src/js/main.js"></script>
+</body>
+</html>
